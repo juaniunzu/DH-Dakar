@@ -85,13 +85,23 @@ public class Carrera {
   }
 
   public void socorrerAuto(String patente){
-    Auto autoASocorrer = (Auto) this.listaDeVehiculos.get(patente);
-    this.socorristaAuto.socorrer(autoASocorrer);
+    try{
+      Auto autoASocorrer = (Auto) this.listaDeVehiculos.get(patente);
+      this.socorristaAuto.socorrer(autoASocorrer);
+    } catch(NullPointerException e){
+      System.out.println("La patente ingresada es incorrecta");
+    }
+
   }
 
   public void socorrerMoto(String patente){
-    Moto motoASocorrer = (Moto) this.listaDeVehiculos.get(patente);
-    this.socorristaMoto.socorrer(motoASocorrer);
+   try{
+     Moto motoASocorrer = (Moto) this.listaDeVehiculos.get(patente);
+     this.socorristaMoto.socorrer(motoASocorrer);
+   } catch (NullPointerException e){
+     System.out.println("La patente ingresada es incorrecta");
+   }
+
   }
 
   public Map<String, Vehiculo> getListaDeVehiculos() {
