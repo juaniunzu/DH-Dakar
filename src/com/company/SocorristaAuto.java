@@ -9,7 +9,7 @@ public class SocorristaAuto {
   }
 
   public void socorrer(Auto unAuto){
-    //todo
+    unAuto.socorrer();
   }
 
   public String getNombre() {
